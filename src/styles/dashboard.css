@@ -1,0 +1,116 @@
+/* Dashboard-only styles: welcome banner, date chip, stacked cards. */
+
+/* ───────── Welcome banner ───────── */
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 26px 28px;
+  border-radius: var(--r-lg);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(233, 216, 91, 0.22), transparent 38%),
+    linear-gradient(120deg, #105c59, #147f7a);
+  box-shadow: var(--shadow);
+}
+:root[data-theme="dark"] .welcome {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(233, 216, 91, 0.12), transparent 38%),
+    linear-gradient(120deg, #0d4a48, #11706b);
+}
+.welcome-date {
+  font-size: 12.5px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bde9dc;
+}
+.welcome h2 {
+  font: 800 28px var(--head);
+  letter-spacing: -0.02em;
+  margin: 4px 0 6px;
+  color: #ffffff;
+}
+.welcome-summary {
+  font-size: 14px;
+  color: #d9f2ec;
+  max-width: 520px;
+}
+.welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.welcome-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 650;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+.welcome-actions button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ───────── Date chip (upcoming events) ───────── */
+.date-chip {
+  width: 44px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+.date-chip b {
+  font: 800 16px/1 var(--head);
+  color: inherit;
+}
+.date-chip small {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: inherit;
+  margin: 2px 0 0;
+}
+
+@media (max-width: 640px) {
+  .welcome {
+    padding: 20px;
+  }
+  .welcome h2 {
+    font-size: 23px;
+  }
+  .welcome-actions button {
+    flex: 1 1 calc(50% - 10px);
+    justify-content: center;
+  }
+}
+
+/* Horizontal bars with a long label (school names) */
+.bar-row.wide-label {
+  grid-template-columns: minmax(120px, 190px) 1fr 56px;
+}
+.bar-row.wide-label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Small grey note next to a label */
+.bar-row span .inline-note {
+  display: block;
+  color: var(--faint);
+  font-size: 11.5px;
+  font-weight: 500;
+}

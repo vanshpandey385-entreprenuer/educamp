@@ -1,0 +1,136 @@
+/*
+ * Chart styles (ColumnChart, DonutChart, StackedBar, legend).
+ * Colours only come from tokens, so the charts follow light and dark mode.
+ */
+
+/* ───────── Column chart ───────── */
+.column-chart {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.column-chart-item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.column-chart-value {
+  font: 700 12px var(--head);
+  color: var(--ink);
+}
+.column-chart-track {
+  width: 100%;
+  max-width: 44px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.column-chart-bar {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--primary-text), var(--primary));
+  transition: height 0.4s ease;
+}
+.column-chart-bar.is-empty {
+  background: var(--line-strong);
+}
+.column-chart-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.column-chart-sub {
+  font-size: 11px;
+  color: var(--faint);
+}
+
+/* ───────── Donut chart ───────── */
+.donut {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+.donut svg {
+  display: block;
+}
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.donut-center strong {
+  font: 800 24px var(--head);
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+.donut-center small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ───────── Stacked bar ───────── */
+.stacked-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 99px;
+  overflow: hidden;
+  background: var(--line);
+}
+.stacked-bar span {
+  display: block;
+  height: 100%;
+}
+
+/* ───────── Legend ───────── */
+.chart-legend {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-2);
+}
+.chart-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.chart-legend b {
+  margin-left: auto;
+  color: var(--ink);
+}
+
+/* A chart with the donut on the left and its legend on the right */
+.chart-split {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.chart-split .chart-legend {
+  flex: 1;
+  margin-top: 0;
+}
+@media (max-width: 520px) {
+  .chart-split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chart-split .donut {
+    align-self: center;
+  }
+}

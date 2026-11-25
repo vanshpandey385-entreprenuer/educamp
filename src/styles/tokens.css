@@ -1,0 +1,139 @@
+/*
+ * DESIGN TOKENS: change the look of the whole app here.
+ *
+ * Efficht brand palette (teal identity):
+ *   Primary Teal #147F7A   buttons, active elements
+ *   Deep Teal    #105C59   sidebar, headings
+ *   Mint         #BDE9DC   soft backgrounds, highlights
+ *   Lemon        #E9D85B   selective highlights (use sparingly)
+ *   Background   #F4F8F7   app background
+ *   Slate        #354B50   text and labels
+ *   Border       #E5ECEA   dividers and card borders
+ *
+ * Every colour used by the CSS comes from this file, so light and dark mode only
+ * need the values below. Never write a hex colour in another CSS file.
+ */
+
+/* ───────── Light theme (default) ───────── */
+:root {
+  color-scheme: light;
+
+  /* Brand */
+  --primary: #147f7a;
+  --primary-hover: #0f6a66;
+  --primary-strong: #0c514e; /* text on a mint background */
+  --primary-text: #147f7a; /* teal text on a white card */
+  --primary-soft: #e4f4ee; /* very light mint fill */
+  --primary-border: #bde9dc; /* mint */
+  --mint-text: #8fe0d1; /* mint text on the deep teal sidebar */
+  --lemon: #e9d85b;
+  --on-primary: #ffffff;
+
+  /* Surfaces */
+  --topbar-bg: rgba(255, 255, 255, 0.88);
+  --bg-page: #f4f8f7;
+  --bg-card: #ffffff;
+  --bg-soft: #f0f5f4;
+  --bg-hover: #e6efed;
+  --white: #ffffff;
+
+  /* Text */
+  --heading: #105c59;
+  --ink: #1f343a;
+  --ink-2: #354b50;
+  --muted: #5b7176;
+  --faint: #8a9ca0;
+
+  /* Lines */
+  --line: #e5ecea;
+  --line-2: #edf2f0;
+  --line-strong: #d3e0dd;
+
+  /* Sidebar (deep teal in both themes) */
+  --sidebar-bg: #105c59;
+  --sidebar-deep: #0b4442;
+  --sidebar-text: #d3ebe5;
+  --sidebar-muted: #9cc9bf;
+  --sidebar-hover: rgba(255, 255, 255, 0.09);
+  --sidebar-hover-solid: #1b706c;
+  --sidebar-active: rgba(189, 233, 220, 0.18);
+
+  /* Status colours: keep these meaningful, do not use for decoration */
+  --ok: #1f7a4d;
+  --ok-bg: #e3f3ea;
+  --ok-border: #bfe3cf;
+  --warn: #86680f;
+  --warn-bg: #fbf3d2;
+  --warn-border: #ecdc92;
+  --bad: #b3483a;
+  --bad-bg: #fcebe7;
+  --bad-border: #f1c9c1;
+  --info: #1f6e8c;
+  --info-bg: #e3f1f6;
+
+  /* Shape and depth */
+  --r-sm: 8px;
+  --r: 12px;
+  --r-lg: 18px;
+  --shadow: 0 1px 2px rgba(16, 60, 58, 0.05), 0 6px 18px rgba(16, 60, 58, 0.05);
+  --shadow-lg: 0 24px 60px rgba(4, 30, 28, 0.28);
+
+  /* Fonts */
+  --head: "Manrope", system-ui, sans-serif;
+  --body: "DM Sans", system-ui, sans-serif;
+}
+
+/* ───────── Dark theme ───────── */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --primary: #1a918a;
+  --primary-hover: #21a79f;
+  --primary-strong: #a6ebe0;
+  --primary-text: #6fd6cb;
+  --primary-soft: #153a39;
+  --primary-border: #24524f;
+  --mint-text: #8fe0d1;
+  --lemon: #e9d85b;
+  --on-primary: #ffffff;
+
+  --topbar-bg: rgba(16, 37, 39, 0.88);
+  --bg-page: #0a1819;
+  --bg-card: #102527;
+  --bg-soft: #153033;
+  --bg-hover: #1a3b3e;
+  --white: #102527;
+
+  --heading: #e6f5f2;
+  --ink: #d3e5e2;
+  --ink-2: #b9d0cc;
+  --muted: #8fa9a6;
+  --faint: #6a8582;
+
+  --line: #1f3d3f;
+  --line-2: #193133;
+  --line-strong: #2a4a4c;
+
+  --sidebar-bg: #081415;
+  --sidebar-deep: #050e0f;
+  --sidebar-text: #c5dcd8;
+  --sidebar-muted: #86a5a1;
+  --sidebar-hover: rgba(255, 255, 255, 0.07);
+  --sidebar-hover-solid: #123033;
+  --sidebar-active: rgba(111, 214, 203, 0.16);
+
+  --ok: #6ccf9b;
+  --ok-bg: #12332a;
+  --ok-border: #1f5a46;
+  --warn: #e5cf6a;
+  --warn-bg: #2f2a10;
+  --warn-border: #5c5220;
+  --bad: #f0907f;
+  --bad-bg: #3a1f1c;
+  --bad-border: #66332d;
+  --info: #7cc4dd;
+  --info-bg: #12303b;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 18px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+}

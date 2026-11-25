@@ -1,0 +1,393 @@
+/* The sign-in page. */
+
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+}
+.login-hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    120% 90% at 0% 0%,
+    var(--sidebar-hover-solid) 0%,
+    var(--sidebar-bg) 45%,
+    var(--sidebar-deep) 100%
+  );
+  color: #fff;
+  padding: 40px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.rings {
+  position: absolute;
+  right: -180px;
+  top: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 70px rgba(189, 233, 220, 0.035),
+    0 0 0 150px rgba(189, 233, 220, 0.03),
+    0 0 0 240px rgba(189, 233, 220, 0.025);
+  pointer-events: none;
+}
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  position: relative;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.brand-word {
+  font: 800 19px var(--head);
+  letter-spacing: 0.06em;
+}
+.hero-copy {
+  position: relative;
+  max-width: 560px;
+}
+.eyebrow-lime {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--mint-text);
+  margin-bottom: 20px;
+}
+.hero-copy h1 {
+  font: 800 clamp(38px, 4.3vw, 58px)/1.06 var(--head);
+  letter-spacing: -0.035em;
+}
+.hero-copy h1 em {
+  font-style: normal;
+  color: var(--mint-text);
+}
+.hero-sub {
+  margin-top: 22px;
+  max-width: 470px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sidebar-text);
+}
+.hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hero-points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sidebar-text);
+}
+.hero-points svg {
+  color: var(--mint-text);
+}
+.hero-card {
+  position: absolute;
+  right: 48px;
+  top: 120px;
+  width: 250px;
+  padding: 16px;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
+}
+.hero-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sidebar-text);
+}
+.hero-card-top i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mint-text);
+  box-shadow: 0 0 0 4px rgba(189, 233, 220, 0.2);
+}
+.hero-card-row {
+  display: flex;
+  gap: 22px;
+  margin: 14px 0;
+}
+.hero-card-row b {
+  display: block;
+  font: 800 24px var(--head);
+  letter-spacing: -0.02em;
+}
+.hero-card-row small {
+  font-size: 11.5px;
+  color: var(--sidebar-muted);
+}
+.hero-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  height: 56px;
+}
+.hero-bars span {
+  flex: 1;
+  border-radius: 5px 5px 2px 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-bars .hl {
+  background: var(--mint-text);
+}
+.hero-foot {
+  position: relative;
+  font-size: 12.5px;
+  color: var(--sidebar-muted);
+}
+.login-panel {
+  display: grid;
+  place-items: center;
+  padding: 40px 32px;
+  background: var(--bg-card);
+}
+.login-form {
+  width: 100%;
+  max-width: 430px;
+  display: grid;
+  gap: 18px;
+}
+.eyebrow {
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+.login-form h2 {
+  font: 800 30px var(--head);
+  letter-spacing: -0.03em;
+  color: var(--heading);
+  margin-top: -8px;
+}
+.login-sub {
+  color: var(--muted);
+  margin-top: -10px;
+}
+.combo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.combo input {
+  padding-left: 40px;
+  padding-right: 42px;
+}
+.combo-icon {
+  position: absolute;
+  left: 13px;
+  color: var(--faint);
+  pointer-events: none;
+}
+.combo-toggle {
+  position: absolute;
+  right: 4px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: none;
+  color: var(--faint);
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+}
+.combo.is-open .combo-toggle svg {
+  transform: rotate(180deg);
+}
+.combo-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: 0 18px 40px rgba(20, 22, 26, 0.16);
+  animation: pop 0.14s ease;
+}
+.combo-list li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 400;
+}
+.combo-list li:hover {
+  background: var(--bg-soft);
+}
+.combo-list li.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.combo-list li.is-disabled:hover {
+  background: none;
+}
+.combo-list b {
+  display: block;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.combo-list small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.combo-list em {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--warn);
+  background: var(--warn-bg);
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+.combo-list li > svg:last-child {
+  margin-left: auto;
+  color: var(--ok);
+}
+.combo-school {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.combo-empty {
+  color: var(--muted);
+  cursor: default !important;
+}
+.seg {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 5px;
+  background: var(--bg-page);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+.seg button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 4px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 12.5px;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+.seg button:hover {
+  color: var(--ink);
+}
+.seg button.on {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(16, 92, 89, 0.28);
+}
+.seg button.on svg {
+  color: var(--mint-text);
+}
+.pw {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pw > svg {
+  position: absolute;
+  left: 13px;
+  color: var(--faint);
+}
+.pw input {
+  padding-left: 38px;
+  padding-right: 44px;
+}
+.pw button {
+  position: absolute;
+  right: 4px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: none;
+  color: var(--faint);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.pw button:hover {
+  color: var(--ink);
+}
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.login-note {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: -4px;
+}
+.preview-note {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--r);
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  font-size: 12.5px;
+  line-height: 1.5;
+  border: 1px solid var(--primary-border);
+}
+.preview-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
