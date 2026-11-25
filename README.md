@@ -6,7 +6,6 @@ One Next.js project that holds both the screens (frontend) and the API (backend)
 
 ```powershell
 npm install
-copy .env.example .env.local   # then put your DATABASE_URL inside
 npm run dev
 ```
 
